@@ -1,1 +1,20 @@
-<p>liste-taches works!</p>
+<h3>Liste des tâches</h3>
+
+<div *ngIf="loading">Chargement…</div>
+<div *ngIf="error">{{ error }}</div>
+
+<ul *ngIf="!loading && taches.length">
+  <li *ngFor="let t of taches">
+    <input type="checkbox" [checked]="t.terminee" (change)="toggle(t)" />
+    <strong [style.textDecoration]="t.terminee ? 'line-through' : 'none'">
+      {{ t.titre }}
+    </strong>
+    — {{ t.description }}
+    <button type="button" (click)="remove(t.id)">Supprimer</button>
+  </li>
+</ul>
+
+<p *ngIf="!loading && !taches.length">Aucune tâche pour l’instant.</p>
+
+
+

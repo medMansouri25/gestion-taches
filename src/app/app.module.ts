@@ -10,6 +10,7 @@ import { ListeTachesComponent } from './pages/liste-taches/liste-taches.componen
 import { AjoutTacheComponent } from './pages/ajout-tache/ajout-tache.component';
 
 import { AppRoutingModule } from './app-routing.module';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -19,10 +20,12 @@ import { AppRoutingModule } from './app-routing.module';
     AjoutTacheComponent
   ],
   imports: [
-    BrowserModule,
-    HttpClientModule,
-    AppRoutingModule
+    BrowserModule, // ✅ pour le navigateur
+    AppRoutingModule, // ✅ pour la navigation
+    FormsModule, // ✅ pour les formulaires
+    HttpClientModule // ✅ pour les requêtes HTTP
   ],
+
   providers: [],
   bootstrap: [AppComponent]
 })
