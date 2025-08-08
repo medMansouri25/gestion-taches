@@ -1,10 +1,18 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
-const routes: Routes = [];
+import { ListeTachesComponent } from './pages/liste-taches/liste-taches.component';
+import { AjoutTacheComponent } from './pages/ajout-tache/ajout-tache.component';
+
+const routes: Routes = [
+  { path: 'taches', component: ListeTachesComponent },
+  { path: 'ajouter', component: AjoutTacheComponent },
+  { path: '', redirectTo: 'taches', pathMatch: 'full' },
+];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}
+
